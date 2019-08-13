@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29123.88
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amusoft.AOP.Build", "Amusoft.AOP.Build\Amusoft.AOP.Build.csproj", "{6280785F-DE63-4EEE-8623-96CB57B5EBEC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Amusoft.AOP.Build", "Amusoft.AOP.Build\Amusoft.AOP.Build.csproj", "{6280785F-DE63-4EEE-8623-96CB57B5EBEC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Amusoft.AOP.Core", "Amusoft.AOP.Core\Amusoft.AOP.Core.csproj", "{CE4F4FB6-A015-47AA-8565-F94B7CC2B41C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amusoft.AOP.Core.UnitTests", "..\tests\Amusoft.AOP.Core.UnitTests\Amusoft.AOP.Core.UnitTests.csproj", "{B24575DF-1FFB-4461-BDA6-EFE02E5C581E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{6280785F-DE63-4EEE-8623-96CB57B5EBEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6280785F-DE63-4EEE-8623-96CB57B5EBEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6280785F-DE63-4EEE-8623-96CB57B5EBEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE4F4FB6-A015-47AA-8565-F94B7CC2B41C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE4F4FB6-A015-47AA-8565-F94B7CC2B41C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE4F4FB6-A015-47AA-8565-F94B7CC2B41C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE4F4FB6-A015-47AA-8565-F94B7CC2B41C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B24575DF-1FFB-4461-BDA6-EFE02E5C581E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B24575DF-1FFB-4461-BDA6-EFE02E5C581E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B24575DF-1FFB-4461-BDA6-EFE02E5C581E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B24575DF-1FFB-4461-BDA6-EFE02E5C581E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

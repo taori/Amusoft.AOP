@@ -1,0 +1,40 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>netcoreapp2.1</TargetFramework>
+		<IsPackable>false</IsPackable>
+	</PropertyGroup>
+
+	<!-- <ItemGroup>  -->
+	<!--   <Compile Remove="TestContent\RelatedAssemblyAttribute.cs" />  -->
+	<!--   <Compile Remove="TestContent\RelatedLocalAttribute.cs" />  -->
+	<!--   <Compile Remove="TestContent\UnrelatedAssemblyAttribute.cs" />  -->
+	<!--   <Compile Remove="TestContent\UnrelatedLocalAttribute.cs" />  -->
+	<!-- </ItemGroup>  -->
+	<!-- -->
+	<!-- <ItemGroup>  -->
+	<!--   <EmbeddedResource Include="TestContent\RelatedAssemblyAttribute.cs" />  -->
+	<!--   <EmbeddedResource Include="TestContent\UnrelatedAssemblyAttribute.cs" />  -->
+	<!--   <EmbeddedResource Include="TestContent\RelatedLocalAttribute.cs" />  -->
+	<!--   <EmbeddedResource Include="TestContent\UnrelatedLocalAttribute.cs" />  -->
+	<!-- </ItemGroup>  -->
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.9.0" />
+		<PackageReference Include="Shouldly" Version="3.0.2" />
+		<PackageReference Include="xunit" Version="2.4.0" />
+		<PackageReference Include="xunit.runner.visualstudio" Version="2.4.0" />
+		<PackageReference Include="Microsoft.CodeAnalysis.CSharp.Workspaces" Version="3.2.1" />
+		<PackageReference Include="Microsoft.CodeAnalysis.Workspaces.MSBuild" Version="3.2.1" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\..\src\Amusoft.AOP.Core\Amusoft.AOP.Core.csproj" />
+	</ItemGroup>
+
+	<Target Name="CustomEmbeddedSources" BeforeTargets="BeforeBuild">
+		<CreateItem Include="TestContent\*.cs">
+			<Output ItemName="EmbeddedResource" TaskParameter="Include" />
+		</CreateItem>
+	</Target>
+
+</Project>
