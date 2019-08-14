@@ -3,11 +3,15 @@ using Amusoft.AOP.Core.Abstraction;
 
 namespace Amusoft.AOP.Core.Aspects
 {
-	public class InterceptorAspectAttribute : Attribute, IInterceptorAspect
+	public abstract class InterceptorAspect : Attribute, IInterceptorAspect
 	{
 		/// <inheritdoc />
-		public void Execute(IInterceptorAspectContext context)
-		{
-		}
+		public abstract void Execute(IInterceptorAspectContext context);
+
+		/// <inheritdoc />
+		public int ExecutionOrder { get; set; }
+
+		/// <inheritdoc />
+		public AspectScope Level { get; set; }
 	}
 }

@@ -4,8 +4,8 @@ using Amusoft.AOP.Core.UnitTests.Mocks;
 
 namespace Amusoft.AOP.Core.UnitTests.TestContent
 {
-	[DummyAspect]
-	public class FileWithRelatedAttribute
+	[DummyInheritedAspect]
+	public class FileWithInheritedRelatedAttribute
 	{
 	}
 }

@@ -21,15 +21,6 @@ namespace Amusoft.AOP.Core.UnitTests
 		}
 
 		[Fact]
-		public void RelatedAssemblyAttributesShouldTrigger()
-		{
-			var syntaxTree = SyntaxTreeTestFactory.FromTestFilePath("RelatedAssemblyAttribute.cs");
-			var compilation = CompilationHelper.CreateCompilation(new[] {syntaxTree});
-			var transformable = TransformLocator.IsTransformable(compilation, syntaxTree);
-			transformable.ShouldBe(true);
-		}
-
-		[Fact]
 		public void UnrelatedLocalAttributesShouldNotTrigger()
 		{
 			var syntaxTree = SyntaxTreeTestFactory.FromTestFilePath("UnrelatedLocalAttribute.cs");
@@ -39,9 +30,36 @@ namespace Amusoft.AOP.Core.UnitTests
 		}
 
 		[Fact]
+		public void RelatedAssemblyAttributesShouldTrigger()
+		{
+			var syntaxTree = SyntaxTreeTestFactory.FromTestFilePath("RelatedAssemblyAttribute.cs");
+			var compilation = CompilationHelper.CreateCompilation(new[] {syntaxTree});
+			var transformable = TransformLocator.IsTransformable(compilation, syntaxTree);
+			transformable.ShouldBe(true);
+		}
+
+		[Fact]
 		public void RelatedLocalAttributesShouldTrigger()
 		{
 			var syntaxTree = SyntaxTreeTestFactory.FromTestFilePath("RelatedLocalAttribute.cs");
+			var compilation = CompilationHelper.CreateCompilation(new[] {syntaxTree});
+			var transformable = TransformLocator.IsTransformable(compilation, syntaxTree);
+			transformable.ShouldBe(true);
+		}
+
+		[Fact]
+		public void InheritedRelatedAssemblyAttributesShouldTrigger()
+		{
+			var syntaxTree = SyntaxTreeTestFactory.FromTestFilePath("InheritedRelatedAssemblyAttribute.cs");
+			var compilation = CompilationHelper.CreateCompilation(new[] {syntaxTree});
+			var transformable = TransformLocator.IsTransformable(compilation, syntaxTree);
+			transformable.ShouldBe(true);
+		}
+
+		[Fact]
+		public void InheritedRelatedLocalAttributesShouldTrigger()
+		{
+			var syntaxTree = SyntaxTreeTestFactory.FromTestFilePath("InheritedRelatedLocalAttribute.cs");
 			var compilation = CompilationHelper.CreateCompilation(new[] {syntaxTree});
 			var transformable = TransformLocator.IsTransformable(compilation, syntaxTree);
 			transformable.ShouldBe(true);
